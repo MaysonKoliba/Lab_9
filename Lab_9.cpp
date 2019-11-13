@@ -2,7 +2,7 @@
 //
 
 #include <iostream>
-#include "Priority.h"
+#include "..\\Lab_9\Priority.h"
 #include <ctime>
 #include "stdlib.h"
 #include "time.h"

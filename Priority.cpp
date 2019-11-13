@@ -1,8 +1,9 @@
-#include "Priority.h"
+#include "..\\Lab_9\Priority.h"
 #include <string>
 #include <iostream>
 using namespace std;
 
+//Heap class functions
 heap::heap()
 {
 	itemCount = 0;
@@ -52,7 +53,7 @@ void heap::heapCreate()
 	}
 };
 
-void heap::printArray()
+string heap::printArray()
 {
 	for (int i = itemCount / 2; i >= 0; i-- ) {
 
@@ -73,10 +74,13 @@ void heap::printArray()
 	}
 
 	itemCount = temp;
+	string output = "";
 
 	for (int i = 0; i < itemCount; i++) {
-		cout << to_string(heapArray[i]) + " ";
+		output = output + to_string(heapArray[i]);
 	}
+
+	return output;
 };
 
 bool heap::remove()
@@ -110,6 +114,8 @@ bool heap::add(const int& data)
 };
 
 
+//Priority queue using a heap functions
+
 bool priorityQueueHeap::add(const int& data)
 {
 	return heapArray.add(data);
@@ -120,7 +126,67 @@ bool priorityQueueHeap::remove()
 	return heapArray.remove();
 }
 
-void priorityQueueHeap::printHeap()
+string priorityQueueHeap::printHeap()
 {
+	
 	return heapArray.printArray();
+}
+
+
+//Priority queue using an array functions
+pQueue::pQueue() {
+	last = -1;
+}
+
+void pQueue::pInsert(int val) {
+	int temp;
+	if (last == -1) {
+		data[0] = val;
+	}
+	else if (last == 0) {
+		if (val < data[0]) {
+			temp = data[0];
+			data[0] = val;
+			data[1] = temp;
+		}
+		else {
+			data[1] = val;
+		}
+	}
+	else {
+		for (int i = 0; i <= last; i++) {
+			if (val < data[i]) {
+				for (int j = last + 1; j > i; j--) {
+					data[j] = data[j - 1];
+				}
+				data[i] = val;
+				last++;
+				return;
+			}
+
+		}
+		data[last + 1] = val;
+	}
+	last++;
+}
+
+
+void pQueue::pRemove() {
+	last--;
+
+}
+
+string pQueue::printPQueue() {
+	/*for (int i = 0; i < last + 1; i++) {
+		std::cout << data[i] << " ";
+	}
+	std::cout << std::endl << last;*/
+
+	string output = "";
+
+	for (int i = 0; i < last + 1; i++) {
+		output = output + to_string(data[i]);
+	}
+
+	return output;
 }
