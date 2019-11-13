@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-//Heap class functions
+//////   Heap class functions   //////
 heap::heap()
 {
 	itemCount = 0;
@@ -91,7 +91,7 @@ bool heap::remove()
 	return true;
 };
 
-bool heap::add(const int& data)
+bool heap::add(int data)
 {
 	heapArray[itemCount] = data;
 
@@ -114,9 +114,8 @@ bool heap::add(const int& data)
 };
 
 
-//Priority queue using a heap functions
-
-bool priorityQueueHeap::add(const int& data)
+////   Priority queue using a heap functions   /////
+bool priorityQueueHeap::add(int data)
 {
 	return heapArray.add(data);
 }
@@ -133,7 +132,8 @@ string priorityQueueHeap::printHeap()
 }
 
 
-//Priority queue using an array functions
+///////    Priority queue using an array/queue functions   ///////
+
 pQueue::pQueue() {
 	last = -1;
 }
@@ -172,16 +172,12 @@ void pQueue::pInsert(int val) {
 
 
 void pQueue::pRemove() {
+	data[last] = 0;
 	last--;
-
 }
 
-string pQueue::printPQueue() {
-	/*for (int i = 0; i < last + 1; i++) {
-		std::cout << data[i] << " ";
-	}
-	std::cout << std::endl << last;*/
-
+string pQueue::printPQueue()
+{
 	string output = "";
 
 	for (int i = 0; i < last + 1; i++) {

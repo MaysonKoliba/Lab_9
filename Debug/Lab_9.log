@@ -1,3 +1,6 @@
 ﻿  Lab_9.cpp
+  Priority.cpp
+C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab9\Lab_9\Priority.h(3,10): warning C4067:  unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
 C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab9\Lab_9\Priority.h(3,10): warning C4067:  unexpected tokens following preprocessor directive - expected a newline
   Lab_9.vcxproj -> C:\Users\mayso\Desktop\ThisSemester\DataStructures\Lab9\Lab_9\Debug\Lab_9.exe

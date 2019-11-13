@@ -22,7 +22,7 @@ int main()
 	pQueue queue2000;
 	pQueue queue5000;
 
-
+	///////   Create each of the 4 test arrays   ///////
 	int array500[500];
 	int array1000[1000];
 	int array2000[2000];
@@ -47,6 +47,8 @@ int main()
 		int randNum = rand() % 5000;
 		array5000[i] = randNum;
 	}
+
+	//////   Heap implementation tests   //////
 
 	auto t1 = Clock::now();
 	for (int i = 0; i < 500; i++) {test500.add(array500[i]);}
@@ -115,7 +117,8 @@ int main()
 		<< std::chrono::duration_cast<std::chrono::nanoseconds>(t24 - t23).count()
 		<< " nanoseconds" << std::endl << endl;
 
-	///////////////////////////////////////////////////////////////////
+	
+	//////    Queue implementation tests   //////
 
 	auto t9 = Clock::now();
 	for (int i = 0; i < 500; i++) { queue500.pInsert(array500[i]); }
@@ -133,7 +136,6 @@ int main()
 		<< std::chrono::duration_cast<std::chrono::nanoseconds>(t26 - t25).count()
 		<< " nanoseconds" << std::endl;
 
-
 	auto t11 = Clock::now();
 	for (int i = 0; i < 1000; i++) { queue1000.pInsert(array1000[i]); }
 	auto t12 = Clock::now();
@@ -150,7 +152,6 @@ int main()
 		<< std::chrono::duration_cast<std::chrono::nanoseconds>(t28 - t27).count()
 		<< " nanoseconds" << std::endl;
 
-
 	auto t13 = Clock::now();
 	for (int i = 0; i < 2000; i++) { queue2000.pInsert(array2000[i]); }
 	auto t14 = Clock::now();
@@ -166,7 +167,6 @@ int main()
 	cout << "queue2000 Queue remove: "
 		<< std::chrono::duration_cast<std::chrono::nanoseconds>(t30 - t29).count()
 		<< " nanoseconds" << std::endl;
-
 
 	auto t15 = Clock::now();
 	for (int i = 0; i < 5000; i++) { queue5000.pInsert(array5000[i]); }
